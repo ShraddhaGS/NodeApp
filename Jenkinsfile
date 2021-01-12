@@ -21,7 +21,7 @@ node {
     }
 	
     stage('Push image') {
-        withDockerRegistry([ credentialsId: "dockerhubCred", url: "" ]) {
+        withDockerRegistry([ credentialsId: "dockerhub_cred", url: "" ]) {
 	    //bat "docker push devopsglobalmedia/teamcitydocker:build"
 	    app.push("${env.BUILD_NUMBER}")
             app.push("latest")
