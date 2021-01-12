@@ -22,9 +22,9 @@ node {
 	
     stage('Push image') {
         withDockerRegistry([ credentialsId: "dockerhub_cred", url: "" ]) {
-	    //bat "docker push devopsglobalmedia/teamcitydocker:build"
-	    app.push("${env.BUILD_NUMBER}")
-            app.push("latest")
+	    bat "docker push 98222/nodeapp"
+	    //app.push("${env.BUILD_NUMBER}")
+            //app.push("latest")
 	}
 	    echo "Trying to Push Docker Build to DockerHub" 
     }
