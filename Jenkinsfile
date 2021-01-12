@@ -5,12 +5,14 @@ node {
         /* Cloning the Repository to our Workspace */
 
         checkout scm
+	echo "inside clone"
     }
 
     stage('Build image') {
         /* This builds the actual image */
 
         app = docker.build("98222/nodeapp")
+	echo "inside build"
     }
 
     stage('Test image') {
